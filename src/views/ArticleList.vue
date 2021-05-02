@@ -1,8 +1,8 @@
 <template>
   <div class="container d-flex justify-content-center main" :style="{minHeight: Height + 'px'}">
     <!-- 去文章详情页 -->
-    <router-link :to="`/detail/${article.id}`" v-for="article in categoryArticles" :key="article.id">
-      <div class="article mt-5">
+      <div class="article mt-5" v-if="categoryArticles.value">
+        <router-link :to="`/detail/${article.id}`" v-for="article in categoryArticles" :key="article.id">
         <div class="dots">
           <span class="mac b1"></span>
           <span class="mac b2"></span>
@@ -35,8 +35,12 @@
             </div>
           </div>
         </div>
+        </router-link>
       </div>
-    </router-link>
+      <div class="no-data" v-else>
+        <p class="iconfont icon-meiyoushuju" style="font-size: 60px"></p>
+        该专栏还没有发布文章！！！
+      </div>
   </div>
 </template>
 
@@ -77,6 +81,7 @@ export default defineComponent({
         item.content = md.render(item.content)
       })
     })
+    console.log('list', categoryArticles.value.length)
     // 获取路由携带过来的参数
     // console.log(route.params.title)
     return {
@@ -197,6 +202,12 @@ export default defineComponent({
         }
       }
     }
+  }
+  .no-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 a {

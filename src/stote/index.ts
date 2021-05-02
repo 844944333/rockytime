@@ -59,13 +59,11 @@ const store = createStore({
           item.tags = item.tags.split(',')
         }
       })
-      console.log('data', data)
       // 取出最新的 5 条博客
       state.articles = data.slice(0, 5)
     },
     // 获取分类列表
     getCategory (state, { data }) {
-      console.log('category', data)
       state.category = data
     },
     // 获取某一分类的博客
@@ -81,6 +79,8 @@ const store = createStore({
     },
     // 获取文章详情
     getArticleDetail (state, { data }) {
+      // console.log('detailData', data)
+      sortAndFormat(data)
       if (data.tags) {
         data.tags = data.tags.split(',')
       }

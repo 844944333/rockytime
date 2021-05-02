@@ -26,27 +26,10 @@ export default defineComponent({
   },
   setup () {
     const store = useStore()
-    // let articles = reactive({})
     onMounted(() => {
-      // console.log(3)
       store.dispatch('getNewBlog')
-      // console.log(moment(1618326789706).format())
-      // axios.get('/api/blog/list').then(res => {
-      //   const { data } = res.data
-      //   data.sort(function (a, b) {
-      //     return a.createtime - b.createtime
-      //   })
-      //   data.map(item => {
-      //     const arrDate = moment(item.createtime).format().split('T')[0]
-      //     const arrTime = moment(item.createtime).format().split('T')[1].split('+')[0]
-      //     item.createtime = arrDate + ' ' + arrTime
-      //   })
-      //   articles = data.slice(0, 5)
-      //   console.log(articles)
-      // })
     })
     const articles = computed(() => store.getters.getNewBlog)
-    // console.log('setup', articles)
     return {
       articles
     }

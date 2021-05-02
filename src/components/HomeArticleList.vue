@@ -66,7 +66,6 @@ export default defineComponent({
     }
   },
   setup (props) {
-    console.log('props', props.article)
     const md = new MarkdownIt()
     const currentHTML = computed(() => {
       if (props.article && props.article.content) {

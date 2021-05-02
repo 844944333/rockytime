@@ -6,7 +6,8 @@
           <div class="card-body text-center" style="max-height: 36rem">
             <img
               :src="`${item.avatar}`"
-              class="rounded-circle img-fluid border border-light my-3 rounded w-75"
+              class="rounded-circle img-fluid border border-light my-3 rounded"
+              style="width: 250px; height: 250px"
             >
             <h5 class="card-title">{{ item.title }}</h5>
             <p class="card-desc text-left">{{ item.desc }}</p>
