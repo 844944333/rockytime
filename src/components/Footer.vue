@@ -17,6 +17,7 @@
     <hr>
     <div class="bottom mt-5">
       <p>Copyright © 2021 时光 (李乃宝) Built with Vue.</p>
+      <a href="http://beian.miit.gov.cn/" target="_blank">桂ICP备2021003495号</a>
     </div>
   </footer>
 </template>
